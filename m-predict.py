@@ -84,11 +84,10 @@ def reg_model(labelled_data, unlabelled_data):
 
         ffill on NaN from training data,
         Replaces NaN in test data with ffill, 
-        target-encodes non-numeric fields, 
+        cat-encodes non-numeric fields, 
         scales values,
         80/20 splits data to help verify model, 
-        selects features using RFECV, with a lasso mode, cv set to 5,
-        uses KNeighborRegressor for 11 nearest neighbours weighted to distance
+        uses LightGBM
     """
 
     # print("throwing away rows to speed up model")
